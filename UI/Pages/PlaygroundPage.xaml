@@ -1,0 +1,66 @@
+﻿<Page x:Class="UI.Pages.PlaygroundPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400"
+      d:DesignWidth="600"
+      d:Background="White">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--#region Title -->
+        <StackPanel Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="You Are" 
+                       Style="{StaticResource H1TextStyle}" 
+                       VerticalAlignment="Center"
+                       Margin="0,0,15,0"/>
+            <Image x:Name="CurrentPlayerIMG" 
+                   Width="20"
+                   VerticalAlignment="Center" />
+        </StackPanel>
+        <!--#endregion Title -->
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Turn:" 
+                       VerticalAlignment="Center"
+                       Margin="0,0,15,0"/>
+            <Image x:Name="TurnIMG" 
+                   Width="10"
+                   VerticalAlignment="Center" />
+        </StackPanel>
+
+        <!--#region Game Board-->
+        <Grid x:Name="GameBoardGrid" 
+              Grid.Row="2"
+              Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        </Grid>
+        <!--#endregion Game Board-->
+    </Grid>
+</Page>

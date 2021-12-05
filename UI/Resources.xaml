@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="AppWindowStyle" TargetType="Window">
+        <Setter Property="Width" Value="600" />
+        <Setter Property="Height" Value="400" />
+        <Setter Property="MinWidth" Value="600" />
+        <Setter Property="MinHeight" Value="400" />
+    </Style>
+
+    <Style x:Key="H1TextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="21" />
+        <Setter Property="FontWeight" Value="DemiBold" />
+    </Style>
+    
+    <!--#region DRAWING IMAGES-->
+    <DrawingImage x:Key="Circle">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V150.43422 H150.43474 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-50.648586,-80.131025">
+                    <DrawingGroup Transform="0.26458333,0,0,0.26458333,0,0">
+                        <GeometryDrawing Brush="Green" Geometry="F0 M150.43474,150.43422z M0,0z M475.71484,302.85742A284.28572,284.28572,0,0,0,191.42773,587.14258A284.28572,284.28572,0,0,0,475.71484,871.42773A284.28572,284.28572,0,0,0,760,587.14258A284.28572,284.28572,0,0,0,475.71484,302.85742z M475.71484,382.85742A204.28571,204.28571,0,0,1,680,587.14258A204.28571,204.28571,0,0,1,475.71484,791.42773A204.28571,204.28571,0,0,1,271.42773,587.14258A204.28571,204.28571,0,0,1,475.71484,382.85742z" />
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="Cross">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V121.34037 H121.34037 V0 H0 Z">
+                <DrawingGroup.Transform>
+                    <TranslateTransform X="108.1294" Y="137.4984" />
+                </DrawingGroup.Transform>
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-46.297076,-37.603624">
+                    <DrawingGroup Opacity="1" Transform="1,0,0,1,-6.047619,26.458333">
+                        <DrawingGroup Transform="0.707106781186548,0.707106781186547,-0.707106781186547,0.707106781186548,0,0">
+                            <GeometryDrawing Brush="IndianRed">
+                                <GeometryDrawing.Geometry>
+                                    <RectangleGeometry RadiusX="0" RadiusY="0" Rect="51.6978,-35.936,157.994,13.6071" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                        </DrawingGroup>
+                        <DrawingGroup Transform="-0.707106781186547,0.707106781186548,-0.707106781186548,-0.707106781186547,0,0">
+                            <GeometryDrawing Brush="IndianRed">
+                                <GeometryDrawing.Geometry>
+                                    <RectangleGeometry RadiusX="0" RadiusY="0" Rect="-108.1294,-137.4984,157.994,13.6071" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <!--#endregion DRAWING IMAGES-->
+</ResourceDictionary>
