@@ -1,0 +1,62 @@
+﻿syntax = "proto3";
+
+package GameGrpcServiceV1;
+
+import "google/protobuf/empty.proto";
+
+service TicTacToeSrv {
+	rpc CreateGame(Game) returns (Response);
+	rpc GameStream(stream GameStreamRequest) returns (stream Game);
+	rpc GetAllGames(google.protobuf.Empty) returns (Games);
+	rpc RemoveGame(Game) returns (Response);
+	rpc UpdateGame(Game) returns (Response);
+}
+
+message Game {
+	enum Shape {
+		CIRCLE = 0;
+		CROSS = 1;
+	}	
+	
+	enum GameStatus {
+		WAITING_FOR_OPPONENT = 0;
+		INPROGRESS = 1;
+		COMPLETED = 2;
+	}
+
+	enum Winner {
+		PLAYER_CIRCLE = 0;
+		PLAYER_CROSS = 1;
+		DRAW = 2;
+	}
+
+	string id = 1;
+	string date_time = 2;
+	Winner winning_player = 5;
+	GameSteps game_steps = 6;
+	GameStatus status = 7;
+	Shape turn = 8;
+}
+
+message GameSteps {
+	repeated uint32 circle = 1;
+	repeated uint32 cross = 2;
+}
+
+message Games {
+	repeated Game game_list = 1;
+}
+
+message GameStreamRequest {
+	string id = 1;
+}
+
+message Response {
+	enum call_status {
+		ERR = 0;
+		OK = 1;
+	}
+
+	call_status status = 1;
+	string message = 2;
+}
