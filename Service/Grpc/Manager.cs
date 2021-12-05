@@ -38,7 +38,7 @@ namespace Service.Grpc
             {
                 _server = new Srv()
                 {
-                    Ports = { new ServerPort("127.0.0.1", Network.GetAvailablePort(), ServerCredentials.Insecure) },
+                    Ports = { new ServerPort("0.0.0.0", Network.GetAvailablePort(), ServerCredentials.Insecure) },
                     Services = { GameGrpcServiceV1.TicTacToeSrv.BindService(new Server()) }
                 };
 
